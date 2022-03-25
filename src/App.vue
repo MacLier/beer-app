@@ -45,4 +45,31 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 3rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #009900;
+  color: white;
+  text-align: center;
+  width: 90%;
+  max-width: 40rem;
+}
+ul{
+  list-style: none;
+}
+li {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  margin: 1rem auto;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  width: 90%;
+  max-width: 40rem;
+}
 </style>

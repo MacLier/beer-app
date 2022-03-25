@@ -1,8 +1,10 @@
 <template>
-  <li :style="{'background-image': 'url(' + imageUrl +')'}"
-  class="card">
+<div class="flex-container">
+  <li class="card">
   <h2>{{name}}</h2>
+  <img :src="imageUrl">
   </li>
+</div>
 </template>
 
 <script>
@@ -30,3 +32,14 @@ export default {
   }
 }
 </script>
+<style>
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.card {
+}
+</style>
