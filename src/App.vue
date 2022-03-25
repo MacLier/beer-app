@@ -2,16 +2,17 @@
 <header>
 <h1>Sexy Crafted Beers</h1>
 </header>
+<input v-model="beerFilter">
 <ul>
+
   <OneBeer
-  v-for="beer in beers"
+  v-for="beer in filterByInput"
   :key="beer.id"
   :id="beer.id"
   :name="beer.name"
   :image-url="beer.image_url"
   ></OneBeer>
 </ul>
-<p>{{info}}</p>
 </template>
 
 <script>
@@ -25,13 +26,26 @@ export default {
   },
   data () {
     return {
-      beers: []
+      beerFilter: '',
+      beers: null
     }
   },
   mounted () {
     axios
       .get('https://api.punkapi.com/v2/beers')
       .then((response) => (this.beers = response.data))
+  },
+  watch: {
+  },
+  computed: {
+    filterByInput () {
+      if (this.beers) {
+        return this.beers.filter(filteredBeer => {
+          return filteredBeer.name.toLowerCase().includes(this.beerFilter)
+        })
+      }
+      return []
+    }
   }
 }
 </script>

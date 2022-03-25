@@ -41,5 +41,7 @@ export default {
 }
 
 .card {
+  width: 30%;
+  height: 40%;
 }
 </style>
