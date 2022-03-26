@@ -1,5 +1,5 @@
 <template>
-<div class="flex-container">
+<div class="">
   <li class="card">
   <h2>{{name}}</h2>
   <img :src="imageUrl">
@@ -33,15 +33,4 @@ export default {
 }
 </script>
 <style>
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-
-}
-
-.card {
-  width: 30%;
-  height: 40%;
-}
 </style>
