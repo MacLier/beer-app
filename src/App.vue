@@ -21,6 +21,9 @@
     :id="beer.id"
     :name="beer.name"
     :image-url="beer.image_url"
+    :description="beer.description"
+    :tagline="beer.tagline"
+    :food-pairing="beer.food_pairing"
     ></OneBeer>
   </div>
 </ul>
@@ -74,10 +77,10 @@ export default {
 body {
   margin: 0;
   padding: 0;
-  background: #2193b0;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #2193b0, #6dd5ed);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: radial-gradient(1.5em 6.28571em at 1.95em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(1.5em 6.28571em at -0.45em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 1.5em 5.5em, radial-gradient(2.3em 4.57143em at 2.99em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(2.3em 4.57143em at -0.69em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.3) 55%, rgba(255, 255, 255, 0) 55%) 2.3em 4em, radial-gradient(3.5em 6.28571em at 4.55em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 0 0, radial-gradient(3.5em 6.28571em at -1.05em, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 50%, rgba(255, 255, 255, 0.25) 55%, rgba(255, 255, 255, 0) 55%) 3.5em 5.5em, radial-gradient(#15ffa5, #00ced1);
+  background-color: mediumspringgreen;
+  background-size: 1.5em 11em, 1.5em 11em, 2.3em 8em, 2.3em 8em, 3.5em 11em, 3.5em 11em, 100% 100%;
+  background-repeat: repeat;
 }
 h1 {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
@@ -96,27 +99,28 @@ label {
 input {
   max-width: 8em;
 }
-#container {
+#container,
+.container {
   width: 90%;
   margin: 0 auto;
   border: 5px solid #22c1c3;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap;
   background: #2193b0;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
-#container li {
-  width: 400px;
-  height:500px;
+#container div>li {
+  width: 300px;
+  height:600px;
   color: #ffa260;
   border: 2px solid;
   font-size: 0,7em;
   transition: color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s;
 }
-#container li:hover {
+#container div>li:hover {
   border-color: #f1ff5c;
   color: white;
   box-shadow: 0 0,5em 0.5em -0.4em #f1ff5c;
@@ -131,7 +135,7 @@ img {
 ul{
   list-style: none;
 }
-li {
+li{
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -143,5 +147,32 @@ li {
   background: -webkit-linear-gradient(to bottom, #2193b0, #6dd5ed);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+button {
+  max-width: 14em;
+  min-width: 14em;
+  background-color: #2193b0;
+  border-radius: 2rem;
+  border: 2px solid #2193b0;
+  color: #6dd5ed;
+}
+.text-center {
+  text-align: center;
+}
+h1 {
+  text: 1.4em
+}
+h2 {
+  text: 1.3em
+}
+h3 {
+  text: 1.2em
+}
+h4 {
+  text: 1.1em
+}
+p {
+  text: 0.9em
 }
 </style>
