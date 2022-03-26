@@ -1,32 +1,32 @@
 <template>
-<header>
-<h1>Sexy Crafted Beers</h1>
-</header>
-<ul>
-  <div id="container">
-        <label for="name">Search for name:</label>
-        <input v-model="beerFilter" id="name">
-        <label for="food">Search for food pairing:</label>
-        <input v-model="beerFilter" id="food">
-        <label for="name">Search for name:</label>
-        <input v-model="beerFilter" id="name">
-  </div>
-</ul>
-<ul>
-  <div id="container">
+  <header>
+    <h1>Sexy Crafted Beers</h1>
+  </header>
+  <ul>
+    <div id="container">
+          <label for="name">Search for name:</label>
+          <input v-model="nameFilter" id="name">
+          <label for="food">Search for food pairing:</label>
+          <input v-model="foodPairingFilter" id="food">
+          <label for="description">Search in desription:</label>
+          <input v-model="descriptionFilter" id="description">
+    </div>
+  </ul>
+  <ul>
+    <div id="container">
 
-    <OneBeer
-    v-for="beer in filterByInput"
-    :key="beer.id"
-    :id="beer.id"
-    :name="beer.name"
-    :image-url="beer.image_url"
-    :description="beer.description"
-    :tagline="beer.tagline"
-    :food-pairing="beer.food_pairing"
-    ></OneBeer>
-  </div>
-</ul>
+      <OneBeer
+      v-for="beer in filterByInput"
+      :key="beer.id"
+      :id="beer.id"
+      :name="beer.name"
+      :image-url="beer.image_url"
+      :description="beer.description"
+      :tagline="beer.tagline"
+      :food-pairing="beer.food_pairing"
+      ></OneBeer>
+    </div>
+  </ul>
 
 </template>
 
@@ -42,7 +42,10 @@ export default {
   data () {
     return {
       beerFilter: '',
-      beers: null
+      nameFilter: '',
+      descriptionFilter: '',
+      foodPairingFilter: '',
+      beers: []
     }
   },
   mounted () {
@@ -51,15 +54,42 @@ export default {
       .then((response) => (this.beers = response.data))
   },
   watch: {
+    nameFilter (value) {
+
+    }
   },
   computed: {
     filterByInput () {
-      if (this.beers) {
-        return this.beers.filter(filteredBeer => {
-          return filteredBeer.name.toLowerCase().includes(this.beerFilter)
-        })
-      }
-      return []
+      return this.filterProductsByFoodPairing(this.filterProductsByDescription(this.filterProductsByName(this.beers)))
+    }
+  },
+  //   filterByInput () {
+  //     if (this.beers) {
+  //       return this.beers.filter(filteredBeers => {
+  //         return filteredBeers.name.toLowerCase().includes(this.beerFilter)
+  //       })
+  //     }
+  //     return []
+  //   }
+  // },
+  methods: {
+
+    filterProductsByName (beers) {
+      return beers.filter(filteredBeers => {
+        return filteredBeers.name.toLowerCase().includes(this.nameFilter.toLowerCase())
+      })
+    },
+    filterProductsByDescription (beers) {
+      return beers.filter(filteredBeers => {
+        return filteredBeers.description.toLowerCase().includes(this.descriptionFilter.toLowerCase())
+      })
+    },
+    filterProductsByFoodPairing (beers) {
+      return beers.filter(beer => {
+        return beer.food_pairing.filter(food => {
+          return food.toLowerCase().includes(this.foodPairingFilter.toLowerCase())
+        }).length !== 0
+      })
     }
   }
 }
