@@ -13,7 +13,7 @@
           <input v-model="foodPairingFilter" id="food">
         </div>
         <div class="inputs">
-          <label for="description">&nbsp;Filter in desription&nbsp;</label>
+          <label for="description">&nbsp;Filter in description&nbsp;</label>
           <input v-model="descriptionFilter" id="description">
         </div>
     </div>
