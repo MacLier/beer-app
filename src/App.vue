@@ -5,11 +5,15 @@
   <div>
     <div id="container">
         <div class="inputs">
-          <label for="name">Filter in names</label>
+          <label for="name">&nbsp;Filter in names&nbsp;</label>
           <input v-model="nameFilter" id="name">
-          <label for="food">Filter in food pairing</label>
+        </div>
+        <div class="inputs">
+          <label for="food">&nbsp;Filter in food pairing&nbsp;</label>
           <input v-model="foodPairingFilter" id="food">
-          <label for="description">Filter in desription</label>
+        </div>
+        <div class="inputs">
+          <label for="description">&nbsp;Filter in desription&nbsp;</label>
           <input v-model="descriptionFilter" id="description">
         </div>
     </div>
@@ -124,6 +128,9 @@ label {
 color: #bd7848;
 text-shadow: 1px 1px 1px rgba(200, 200, 200, 1);
 }
+.inputs {
+  flex: wrap;
+}
 input {
   max-width: 8em;
 }
@@ -206,11 +213,15 @@ h3 {
   text: 1.2em;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 h4 {
   text: 1.1em;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 p {
   text: 0.9em;
