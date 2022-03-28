@@ -112,14 +112,15 @@ h1 {
   margin: 3rem auto;
   border-radius: 10px;
   padding: 1rem;
-  background-color: #FBD786;
+  background-color: #bd7848;
   color: white;
   text-align: center;
   width: 90%;
   max-width: 40rem;
 }
 label {
-
+color: #bd7848;
+text-shadow: 1px 1px 1px rgba(200, 200, 200, 1);
 }
 input {
   max-width: 8em;
@@ -139,8 +140,8 @@ input {
 }
 #container div>li {
   width: 300px;
-  height:600px;
-  color: #ffa260;
+  height:450px;
+  color: #bd7848;
   border: 2px solid;
   font-size: 0,7em;
   transition: color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s;
@@ -171,7 +172,10 @@ li{
   background: #2193b0;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #2193b0, #6dd5ed);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+}
+p {
+  max-height: 100px;
+  overflow: auto;
 }
 
 button {

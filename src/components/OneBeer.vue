@@ -8,14 +8,14 @@
       <img :src="imageUrl">
     </div>
     <div>
-        <button @click="toggleVisibility">{{ !visibility ? 'Show' : 'Hide'}}  food pairing:</button>
+        <button @click="toggleVisibility">{{ !visibility ? 'Show' : 'Hide'}}  food pairing</button>
       <ul v-if="visibility">
         <div v-for="(food, i) in foodPairing" :key="i">
           <p>{{food}}</p>
         </div>
       </ul>
     </div>
-    <button @click="toggleVisibility">{{ visibility ? 'Show' : 'Hide'}} description: </button>
+    <button @click="toggleVisibility">{{ visibility ? 'Show' : 'Hide'}} description</button>
     <p v-if="!visibility"> {{description}}</p>
   </div>
   </li>
