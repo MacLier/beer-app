@@ -195,37 +195,45 @@ button {
   text-align: center;
 }
 h1 {
-  text: 1.4em
+  text: 1.4em;
 }
 h2 {
-  text: 1.3em
+  text: 1.3em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 h3 {
-  text: 1.2em
+  text: 1.2em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 h4 {
-  text: 1.1em
+  text: 1.1em;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 p {
-  text: 0.9em
+  text: 0.9em;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 @media (min-width: 400px){
   h1 {
-  text: 1.2em
+  text: 1.2em;
   }
   h2 {
-  text: 1.1em
+  text: 1.1em;
   }
   h3 {
-    text: 1.0em
+    text: 1.0em;
   }
   h4 {
-    text: 0.9em
+    text: 0.9em;
   }
   p {
     text: 0.7em;
-    padding-top: 5px;
-    padding-bottom: 5px;
   }
 }
 </style>
