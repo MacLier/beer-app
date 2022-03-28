@@ -4,9 +4,9 @@
   </header>
   <ul>
     <div id="container">
-          <label for="name">Search for name:</label>
+          <label for="name">Search in names:</label>
           <input v-model="nameFilter" id="name">
-          <label for="food">Search for food pairing:</label>
+          <label for="food">Search in food pairing:</label>
           <input v-model="foodPairingFilter" id="food">
           <label for="description">Search in desription:</label>
           <input v-model="descriptionFilter" id="description">
@@ -51,7 +51,11 @@ export default {
   mounted () {
     axios
       .get('https://api.punkapi.com/v2/beers')
-      .then((response) => (this.beers = response.data))
+      .then((response) => {
+        this.beers = response.data.sort((a, b) => {
+          return a.name > b.name
+        })
+      })
   },
   watch: {
     nameFilter (value) {
@@ -63,15 +67,6 @@ export default {
       return this.filterProductsByFoodPairing(this.filterProductsByDescription(this.filterProductsByName(this.beers)))
     }
   },
-  //   filterByInput () {
-  //     if (this.beers) {
-  //       return this.beers.filter(filteredBeers => {
-  //         return filteredBeers.name.toLowerCase().includes(this.beerFilter)
-  //       })
-  //     }
-  //     return []
-  //   }
-  // },
   methods: {
 
     filterProductsByName (beers) {
