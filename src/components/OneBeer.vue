@@ -1,19 +1,19 @@
 <template>
 <div class="">
   <li class="card">
-  <h2>{{name}}</h2>
-  <h3>"{{tagline}}"</h3>
+  <h3>{{name}}</h3>
+  <h4>"{{tagline}}"</h4>
   <div class="text-center">
     <div>
       <img :src="imageUrl">
     </div>
     <div>
         <button @click="toggleVisibility">{{ !visibility ? 'Show' : 'Hide'}}  food pairing</button>
-      <ul v-if="visibility">
+      <div v-if="visibility">
         <div v-for="(food, i) in foodPairing" :key="i">
           <p>{{food}}</p>
         </div>
-      </ul>
+      </div>
     </div>
     <button @click="toggleVisibility">{{ visibility ? 'Show' : 'Hide'}} description</button>
     <p v-if="!visibility"> {{description}}</p>

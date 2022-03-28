@@ -4,11 +4,11 @@
   </header>
   <ul>
     <div id="container">
-          <label for="name">Search in names:</label>
+          <label for="name">Filter in names</label>
           <input v-model="nameFilter" id="name">
-          <label for="food">Search in food pairing:</label>
+          <label for="food">Filter in food pairing</label>
           <input v-model="foodPairingFilter" id="food">
-          <label for="description">Search in desription:</label>
+          <label for="description">Filter in desription</label>
           <input v-model="descriptionFilter" id="description">
     </div>
   </ul>
@@ -129,6 +129,7 @@ input {
 .container {
   width: 90%;
   margin: 0 auto;
+  min-height: 160px;
   border: 5px solid #22c1c3;
   display: flex;
   justify-content: space-evenly;
@@ -172,6 +173,9 @@ li{
   background: #2193b0;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #2193b0, #6dd5ed);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #2193b0, #6dd5ed); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+ul>div {
+  max-height: 70px;
 }
 p {
   max-height: 100px;
