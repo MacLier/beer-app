@@ -2,7 +2,7 @@
   <header>
     <h1>Sexy Crafted Beers</h1>
   </header>
-  <ul>
+  <div>
     <div id="container">
           <label for="name">Filter in names</label>
           <input v-model="nameFilter" id="name">
@@ -11,8 +11,8 @@
           <label for="description">Filter in desription</label>
           <input v-model="descriptionFilter" id="description">
     </div>
-  </ul>
-  <ul>
+  </div>
+  <div>
     <div id="container">
 
       <OneBeer
@@ -26,7 +26,7 @@
       :food-pairing="beer.food_pairing"
       ></OneBeer>
     </div>
-  </ul>
+  </div>
 
 </template>
 
@@ -129,7 +129,6 @@ input {
 .container {
   width: 90%;
   margin: 0 auto;
-  min-height: 160px;
   border: 5px solid #22c1c3;
   display: flex;
   justify-content: space-evenly;
@@ -137,7 +136,7 @@ input {
   background: #2193b0;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #6dd5ed, #2193b0);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to bottom, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  list-style: none;
 }
 #container div>li {
   width: 300px;
