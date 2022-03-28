@@ -129,7 +129,7 @@ color: #bd7848;
 text-shadow: 1px 1px 1px rgba(200, 200, 200, 1);
 }
 .inputs {
-  flex: wrap;
+  flex-wrap: wrap;
 }
 input {
   max-width: 8em;
