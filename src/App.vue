@@ -4,12 +4,14 @@
   </header>
   <div>
     <div id="container">
+        <div class="inputs">
           <label for="name">Filter in names</label>
           <input v-model="nameFilter" id="name">
           <label for="food">Filter in food pairing</label>
           <input v-model="foodPairingFilter" id="food">
           <label for="description">Filter in desription</label>
           <input v-model="descriptionFilter" id="description">
+        </div>
     </div>
   </div>
   <div>
@@ -138,7 +140,7 @@ input {
   background: linear-gradient(to bottom, #6dd5ed, #2193b0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   list-style: none;
 }
-#container div>li {
+#container .card {
   width: 300px;
   height:450px;
   color: #bd7848;
@@ -146,7 +148,7 @@ input {
   font-size: 0,7em;
   transition: color 0.5s, border-color 0.5s, box-shadow 0.5s, transform 0.5s;
 }
-#container div>li:hover {
+#container .card:hover {
   border-color: #f1ff5c;
   color: white;
   box-shadow: 0 0,5em 0.5em -0.4em #f1ff5c;
@@ -161,7 +163,7 @@ img {
 ul{
   list-style: none;
 }
-li{
+.card{
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin: 1rem auto;
   border-radius: 10px;
@@ -206,5 +208,24 @@ h4 {
 }
 p {
   text: 0.9em
+}
+@media (min-width: 400px){
+  h1 {
+  text: 1.2em
+  }
+  h2 {
+  text: 1.1em
+  }
+  h3 {
+    text: 1.0em
+  }
+  h4 {
+    text: 0.9em
+  }
+  p {
+    text: 0.7em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 }
 </style>

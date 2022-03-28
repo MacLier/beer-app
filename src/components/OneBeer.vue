@@ -1,6 +1,5 @@
 <template>
-<div class="">
-  <li class="card">
+<div class="card">
   <h3>{{name}}</h3>
   <h4>"{{tagline}}"</h4>
   <div class="text-center">
@@ -18,7 +17,6 @@
     <button @click="toggleVisibility">{{ visibility ? 'Show' : 'Hide'}} description</button>
     <p v-if="!visibility"> {{description}}</p>
   </div>
-  </li>
 </div>
 </template>
 
